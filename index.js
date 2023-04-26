@@ -10,6 +10,10 @@ app.use('/opa',(req, res, next) => {
     next()
 })
 
+app.get('/clientes/:id', (req, res) =>{
+    res.send(`Cliente ${req.params.id} selecionado!`)
+})
+
 app.get('/opa',(req, res, next) => {
     console.log('durante');
     res.json({
