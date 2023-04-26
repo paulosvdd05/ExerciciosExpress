@@ -3,6 +3,7 @@ const app = express()
 const bodyParser = require('body-parser')
 
 const saudacao = require('./saudacaoMid')
+const UsuarioApi = require('./api/usuario')
 
 
 app.use(bodyParser.text())
