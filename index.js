@@ -28,7 +28,7 @@ app.post('/corpo', (req, res) =>{
     // req.on('end', function(){
     //     res.send(corpo)
     // })
-    res.send(req.body)
+    res.send(req.body.nome)
 })
                  
 //Dois pontos quer dizer que esse ':id' pode ser alterado 
