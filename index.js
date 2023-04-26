@@ -13,6 +13,19 @@ app.use('/opa',(req, res, next) => {
 app.get('/clientes/relatorio', (req, res) => {
     res.send(`Cliente relatório: completo = ${req.query.completo} ano = ${req.query.ano}`)
 })
+
+app.post('/corpo', (req, res) =>{
+    let corpo = ''
+
+    req.on('data', function(parte){
+        corpo += parte
+    })
+    
+    req.on('end', function(){
+        res.send(corpo)
+    })
+
+})
                  
 //Dois pontos quer dizer que esse ':id' pode ser alterado 
 app.get('/clientes/:id', (req, res) =>{
