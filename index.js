@@ -22,7 +22,7 @@ app.post('/corpo', (req, res) =>{
     })
     
     req.on('end', function(){
-        res.send(corpo)
+        res.json(JSON.parse(corpo))
     })
 
 })
