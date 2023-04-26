@@ -3,10 +3,11 @@ const app = express()
 const bodyParser = require('body-parser')
 
 const saudacao = require('./saudacaoMid')
-const UsuarioApi = require('./api/usuario')
+const usuarioApi = require('./api/usuario')
+require('./api/produto')(app, 'com param!')
 
-app.post('/usuario', UsuarioApi.salvar)
-app.get('/usuario', UsuarioApi.obter)
+app.post('/usuario', usuarioApi.salvar)
+app.get('/usuario', usuarioApi.obter)
 
 
 app.use(bodyParser.text())
