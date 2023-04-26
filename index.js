@@ -3,7 +3,7 @@ const app = express()
 
 const saudacao = require('./saudacaoMid')
 
-app.use(saudacao)//node automaticamente reconhece como funca middleware
+app.use(saudacao('Paulo'))//node automaticamente reconhece como funca middleware
 
 app.use('/opa',(req, res, next) => {
     console.log('Antes');
