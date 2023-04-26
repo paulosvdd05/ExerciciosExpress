@@ -3,11 +3,17 @@ const app = express()
 
 app.get('/opa',(req, res) => {
 
-    res.json([
-        {id:7, name: 'ana', position:1},
-        {id:12, name: 'Carlos', position:2},
-        {id:17, name: 'Bia', position:3}
-    ])
+    res.json({
+        data: [
+            {id:7, name: 'ana', position:1},
+            {id:12, name: 'Carlos', position:2},
+            {id:17, name: 'Bia', position:3}
+        ],
+        count: 3,
+        skip: 0,
+        limit: 3,
+        status: 200
+    })
 
     // res.json({
     //     name: 'iPad 32Gb',
