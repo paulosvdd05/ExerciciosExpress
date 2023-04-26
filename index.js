@@ -1,9 +1,13 @@
 const express = require('express')
 const app = express()
+const bodyParser = require('body-parser')
 
 const saudacao = require('./saudacaoMid')
 
-app.use(saudacao('Paulo'))//node automaticamente reconhece como funca middleware
+
+app.use(bodyParser.text())
+app.use(bodyParser.json())
+app.use(saudacao('Pauloa'))//node automaticamente reconhece como funca middleware
 
 app.use('/opa',(req, res, next) => {
     console.log('Antes');
@@ -15,16 +19,16 @@ app.get('/clientes/relatorio', (req, res) => {
 })
 
 app.post('/corpo', (req, res) =>{
-    let corpo = ''
+    // let corpo = ''
 
-    req.on('data', function(parte){
-        corpo += parte
-    })
+    // req.on('data', function(parte){
+    //     corpo += parte
+    // })
     
-    req.on('end', function(){
-        res.json(JSON.parse(corpo))
-    })
-
+    // req.on('end', function(){
+    //     res.send(corpo)
+    // })
+    res.send(req.body)
 })
                  
 //Dois pontos quer dizer que esse ':id' pode ser alterado 
