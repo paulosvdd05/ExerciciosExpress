@@ -1,8 +1,8 @@
 const express = require('express')
 const app = express()
 
-app.all('/opa',(req, res) => {
-    res.send('estou bem')
+app.get('/opa',(req, res) => {
+    res.send('<h1>Estou bem</h1><br><br><h2>Isto é HTML</h2>')
 })
 
 app.listen(3000, () => {
