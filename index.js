@@ -7,6 +7,7 @@ const saudacao = require('./saudacaoMid')
 
 app.use(bodyParser.text())
 app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({extended: true}))
 app.use(saudacao('Pauloa'))//node automaticamente reconhece como funca middleware
 
 app.use('/opa',(req, res, next) => {
