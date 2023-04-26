@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
 
-app.post('/opa',(req, res) => {
+app.all('/opa',(req, res) => {
     res.send('estou bem')
 })
 
