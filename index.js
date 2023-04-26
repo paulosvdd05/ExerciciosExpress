@@ -3,12 +3,12 @@ const app = express()
 
 
 app.use('/opa',(req, res, next) => {
-    console.log('sera que serei chamado?');
+    console.log('Antes');
     next()
 })
 
-app.get('/opa',(req, res) => {
-
+app.get('/opa',(req, res, next) => {
+    console.log('durante');
     res.json({
         data: [
             {id:7, name: 'ana', position:1},
@@ -21,6 +21,8 @@ app.get('/opa',(req, res) => {
         status: 200
     })
 
+    next()
+
     // res.json({
     //     name: 'iPad 32Gb',
     //     price: 1899.00,
@@ -28,6 +30,12 @@ app.get('/opa',(req, res) => {
     // })
 
     //res.send('<h1>Estou bem</h1><br><br><h2>Isto é HTML</h2>')
+})
+
+
+app.use('/opa',(req, res) => {
+    console.log('Depois');
+    
 })
 
 
